@@ -11,7 +11,9 @@ public class DemoRabbitMqApplication {
 
 		ApplicationContext context = SpringApplication.run(DemoRabbitMqApplication.class, args);
 
-		context.getBean(MyRabbitSender.class).sendEmpMessage(new Employee(1, "nila"));
+		context.getBean(MyRabbitSender.class).sendEmpMessage(new Employee(2, "nila-2"));
+		context.getBean(MyRabbitSender.class).sendEmpMessage(new Employee(3, "nila-3"));
+		context.getBean(MyRabbitSender.class).sendEmpMessage(new Employee(4, "nila-4"));
 	}
 
 }

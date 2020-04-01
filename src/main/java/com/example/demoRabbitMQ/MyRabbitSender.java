@@ -15,7 +15,7 @@ public class MyRabbitSender {
 
         log.debug("sending employee message >>> {}" , employee);
         rabbitTemplate.convertAndSend("example.exchange", "example.key", employee,  message -> {
-            message.getMessageProperties().setHeader("myheader","hello");
+            message.getMessageProperties().setHeader("myheader","hello - this is message 2");
             return message;
         } );
     }
