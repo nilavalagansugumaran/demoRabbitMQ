@@ -2,12 +2,16 @@ package com.example.demoRabbitMQ;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class DemoRabbitMqApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoRabbitMqApplication.class, args);
+
+		ApplicationContext context = SpringApplication.run(DemoRabbitMqApplication.class, args);
+
+		context.getBean(MyRabbitSender.class).sendEmpMessage(new Employee(1, "nila"));
 	}
 
 }
